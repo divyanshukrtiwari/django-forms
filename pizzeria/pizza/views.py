@@ -14,6 +14,7 @@ def order(request):
     if request.method == 'POST':
         filled_form = PizzaForm(request.POST)
         if filled_form.is_valid():
+            filled_form.save()
             note = 'Your order of %s %s and %s pizza has been placed!' %(filled_form.cleaned_data['size'], 
             filled_form.cleaned_data['topping1'], filled_form.cleaned_data['topping2'])
             new_form = PizzaForm()
