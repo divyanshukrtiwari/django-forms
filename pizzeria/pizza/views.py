@@ -25,6 +25,7 @@ def order(request):
 def pizzas(request):
     number_of_pizzas = 2
     filled_multiple_pizza_form = MultiplePizzaForm(request.GET)
+
     if filled_multiple_pizza_form.is_valid():
         number_of_pizzas = filled_multiple_pizza_form.cleaned_data['number']
 
@@ -40,5 +41,7 @@ def pizzas(request):
         else:
             note = 'Something went wrong. Please try again'
 
-        return render(request, 'pizza/pizzas.html', {'note':note, 'formset':formset})            
+        return render(request, 'pizza/pizzas.html', {'note':note, 'formset':formset}) 
+    else:
+        return render(request, 'pizza/pizzas.html', {'formset':formset})           
 
