@@ -7,3 +7,9 @@
 </form>
 
 <h3>{{ note }}</h3>
+<br>
+
+<form action="{% url 'pizzas' %}">
+    {{ multiple_form }}
+    <input type="submit" value="Get Pizza">
+</form>
