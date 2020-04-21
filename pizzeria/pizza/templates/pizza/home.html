@@ -1,2 +1,7 @@
-<h2>Pizzeria</h2>
-<a href="{% url 'order' %}">Order Pizza</a>
+{% extends 'pizza/base.html' %}
+{% block 'body' %}
+<div>
+    {% load static %}
+    <img src="{% static 'huh.jpg' %}"  style="height: 93vh; width: 100vw;" alt="Pizzeria">
+</div>
+{% endblock %}

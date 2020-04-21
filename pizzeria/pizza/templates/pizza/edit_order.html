@@ -1,7 +1,15 @@
-<h3>Edit Pizza</h3>
+{% extends 'pizza/base.html' %}
+{% block 'body' %}
 
-<form action="{% url 'edit_order' pizza.id %}" method="POST">
-    {% csrf_token %}
-    {{ pizzaform }}
-    <input type="submit" value="Edit Pizza">
-</form>
+<div class="container mt-5">
+    <h3>Edit Pizza</h3>
+    <br>
+    <h4>{{ note }}</h4>
+    <br>
+    <form action="{% url 'edit_order' pizza.id %}" method="POST">
+        {% csrf_token %}
+        {{ pizzaform }}
+        <input type="submit" value="Done">
+    </form>
+</div>
+{% endblock %}
